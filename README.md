@@ -1,2 +1,4 @@
 # PROJECT-TORTERRA
 Project Torterra aims at achieving net-zero and fulfilling sustainable development goals.
+Afforestation is one of the best practices for carbon sequestration but that fact holds true only if its done properly. Poor placement and species choice of trees can affect the levels of ecosystem services provided through conflicts with infrastructures, by not allowing for maximized energy saving benefits when placed near buildings and by limiting air quality improvements or storm water interception when compared to other species or placement scenarios. When trees are planted by analyzing the soil and weather conditions, the longevity and health of the tree is increased. Thus in the long term, these trees grow up to sequester carbon dioxide present in the atmosphere. Thus through our project we intend to make use of various GIS tools to analyze suitable landscapes for planting trees and planning urban forests making trees self-sustainable.
+
