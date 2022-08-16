@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Soil-Torterra</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i");
+
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        line-height: 1.5;
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        min-height: 10%;
+      }
+
+      .cont {
+        max-width: 1170px;
+        margin: auto;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      ul {
+        list-style: none;
+      }
+      .footer{
+				background-color: #24262b;
+				position: relative;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				color: white;
+				margin: 8px -10px 0px -10px;
+				height: 30% !important;
+			}
+			
+			.footer-col{
+			   width: 25%;
+			   padding: 0 15px;
+			   height:20%;
+			}
+			
+			.footer-col h4{
+				font-family: "Fredoka One";
+				font-weight: bold;
+				font-size: 18px;
+				color: #ffffff;
+				text-transform: capitalize;
+				margin-bottom: 35px;
+				font-weight: 500;
+				position: relative;
+			}
+			
+			.footer-col h4::before{
+				content: '';
+				position: absolute;
+				left:0;
+				bottom: -10px;
+				background-color: #e91e63;
+				height: 2px;
+				box-sizing: border-box;
+				width: 50px;
+			}
+			
+			.footer-col a{
+				font-family: "Fredoka One";
+				font-size: 16px;
+				text-transform: capitalize;
+				color: #ffffff;
+				text-decoration: none;
+				font-weight: 300;
+				color: #bbbbbb;
+				display: block;
+				transition: all 0.3s ease;
+			}
+			
+			.footer-col a:hover{
+				color: #ffffff;
+				padding-left: 8px;
+			}
+			
+			.footer-col .social-links a{
+				display: inline-block;
+				height: 40px;
+				width: 40px;
+				background-color: rgba(255,255,255,0.2);
+				margin:0 10px 10px 0;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 50%;
+				color: #ffffff;
+				transition: all 0.5s ease;
+			}
+			
+			.footer-col .social-links a:hover{
+				color: #24262b;
+				background-color: #ffffff;
+			}
+
+      /*responsive*/
+      @media (max-width: 767px) {
+        .footer-col {
+          width: 50%;
+          margin-bottom: 30px;
+        }
+      }
+      @media (max-width: 574px) {
+        .footer-col {
+          width: 100%;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      .car {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        display: -webkit-flex;
+        justify-content: center;
+        -webkit-justify-content: center;
+        align-items: center;
+        -webkit-align-items: center;
+      }
+
+      body {
+        background-color: Black;
+      }
+
+      .carousel {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        max-width: 900px;
+        max-height: 550px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .carousel-item {
+        visibility: visible;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        -webkit-align-items: center;
+        -webkit-justify-content: flex-end;
+        position: relative;
+        background-color: #fff;
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+        position: absolute;
+        z-index: 0;
+        transition: 0.6s all linear;
+      }
+
+      .carousel-item__info {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        display: -webkit-flex;
+        -webkit-justify-content: center;
+        -webkit-flex-direction: column;
+
+        order: 1;
+        left: 0;
+        margin: auto;
+        padding: 0 40px;
+        width: 40%;
+      }
+
+      .carousel-item__image {
+        width: 60%;
+        height: 100%;
+        order: 2;
+        align-self: flex-end;
+        flex-basis: 60%;
+
+        -webkit-order: 2;
+        -webkit-align-self: flex-end;
+        -webkit-flex-basis: 60%;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        transform: translateX(100%);
+        transition: 0.6s all ease-in-out;
+      }
+
+      .carousel-item__subtitle {
+        font-family: "Open Sans", sans-serif;
+        letter-spacing: 3px;
+        font-size: 10px;
+        text-transform: uppercase;
+        margin: 0;
+        color: #7e7e7e;
+        font-weight: 700;
+        transform: translateY(25%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s all ease-in-out;
+      }
+
+      .carousel-item__title {
+        margin: 15px 0 0 0;
+        font-family: "Playfair Display", serif;
+        font-size: 44px;
+        line-height: 45px;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: #2c2c2c;
+        transform: translateY(25%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.6s all ease-in-out;
+      }
+
+      .carousel-item__description {
+	  transform: translateY(25%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.6s all ease-in-out;
+        margin-top: 35px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 13px;
+        color: #7e7e7e;
+        line-height: 22px;
+        margin-bottom: 35px;
+      }
+      .carousel-item--1 .carousel-item__image {
+        background-image: url("Sandy.png");
+      }
+
+      .carousel-item--2 .carousel-item__image {
+        background-image: url("Clay.png");
+      }
+
+      .carousel-item--3 .carousel-item__image {
+        background-image: url("Loam.png");
+      }
+
+      .carousel-item--4 .carousel-item__image {
+        background-image: url("peat.png");
+      }
+
+      .carousel-item--5 .carousel-item__image {
+        background-image: url("silt.png");
+      }
+
+      .carousel-item__container {
+      }
+
+      .carousel-item__btn {
+        width: 35%;
+        color: #2c2c2c;
+        font-family: "Open Sans", sans-serif;
+        letter-spacing: 3px;
+        font-size: 11px;
+        text-transform: uppercase;
+        margin: 0;
+        width: 35%;
+        font-weight: 700;
+        text-decoration: none;
+        transform: translateY(25%);
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.6s all ease-in-out;
+      }
+
+      .carousel__nav {
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        background-color: grey;
+        bottom: 0;
+      }
+
+      .carousel__icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        fill: white;
+      }
+
+      .carousel__arrow {
+        cursor: pointer;
+        display: inline-block;
+        padding: 11px 15px;
+        position: relative;
+      }
+
+      .carousel__arrow:nth-child(1):after {
+        content: "";
+        right: -3px;
+        position: absolute;
+        width: 1px;
+        background-color: #b0b0b0;
+        height: 14px;
+        top: 50%;
+        margin-top: -7px;
+      }
+
+      .active {
+        z-index: 1;
+        display: flex;
+        visibility: visible;
+      }
+
+      .active .carousel-item__subtitle,
+      .active .carousel-item__title,
+      .active .carousel-item__description,
+      .active .carousel-item__btn {
+        transform: translateY(0);
+        opacity: 1;
+        transition: 0.6s all ease-in-out;
+        visibility: visible;
+      }
+
+      .active .carousel-item__image {
+        transition: 0.6s all ease-in-out;
+        transform: translateX(0);
+      }
+    </style>
+    <title>Soils</title>
+  </head>
+
+  <body>
+    <script>
+      $(function () {
+        $(".carousel-item").eq(0).addClass("active");
+        var total = $(".carousel-item").length;
+        var current = 0;
+        $("#moveRight").on("click", function () {
+          var next = current;
+          current = current + 1;
+          setSlide(next, current);
+        });
+        $("#moveLeft").on("click", function () {
+          var prev = current;
+          current = current - 1;
+          setSlide(prev, current);
+        });
+        function setSlide(prev, next) {
+          var slide = current;
+          if (next > total - 1) {
+            slide = 0;
+            current = 0;
+          }
+          if (next < 0) {
+            slide = total - 1;
+            current = total - 1;
+          }
+          $(".carousel-item").eq(prev).removeClass("active");
+          $(".carousel-item").eq(slide).addClass("active");
+          setTimeout(function () {}, 800);
+
+          console.log("current " + current);
+          console.log("prev " + prev);
+        }
+      });
+    </script>
+    <div class="car">
+      <div class="carousel">
+        <div class="carousel__nav">
+          <span id="moveLeft" class="carousel__arrow">
+            <svg
+              class="carousel__icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"
+              ></path>
+            </svg>
+          </span>
+          <span id="moveRight" class="carousel__arrow">
+            <svg
+              class="carousel__icon"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div class="carousel-item carousel-item--1">
+          <div class="carousel-item__image"></div>
+          <div class="carousel-item__info">
+            <div class="carousel-item__container">
+              <h2 class="carousel-item__subtitle"></h2>
+              <h1 class="carousel-item__title">Sandy Soil</h1>
+              <p class="carousel-item__description">
+                This kind of soil usually gets washed away during heavy rains, 
+		    often carry fewer nutrients for the plants because it warms up faster.
+		    It is easier to cultivate this soil and it drains and dries out fast.
+              </p>
+              <a href="sandy.html" class="carousel-item__btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item carousel-item--2">
+          <div class="carousel-item__image"></div>
+          <div class="carousel-item__info">
+            <div class="carousel-item__container">
+             <h2 class="carousel-item__subtitle"></h2>
+              <h1 class="carousel-item__title">Clay Soil</h1>
+              <p class="carousel-item__description">
+		    This soil is poor at water-drainage and allows fewer air spaces, 
+                it is heavier to cultivate and gets warmed up slowly during the spring season.
+		    This soil is hard and rocky when dry and gets sticky and lumpy when it is wet.
+              </p>
+              <a href="clay.html" class="carousel-item__btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item carousel-item--3">
+          <div class="carousel-item__image"></div>
+          <div class="carousel-item__info">
+            <div class="carousel-item__container">
+              <h2 class="carousel-item__subtitle"></h2>
+              <h1 class="carousel-item__title">Loamy Soil</h1>
+              <p class="carousel-item__description">
+                This soil is a mix of silt, clay, and sand, 
+		    it is damp and fine-textured soil.
+		    This soil can be easily cultivated and warms up easily but does not become too dry during summer months. This is 			    an ideal soil for outdoor plants.
+              <a href="loamy.html" class="carousel-item__btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-item--4">
+          <div class="carousel-item__image"></div>
+          <div class="carousel-item__info">
+            <div class="carousel-item__container">
+             <h2 class="carousel-item__subtitle"></h2>
+              <h1 class="carousel-item__title">Peaty Soil</h1>
+              <p class="carousel-item__description">
+		    This soil offers fewer nutrients because the acidic nature of the soil slows the decomposition process,	
+                high amounts of peat lend spongy and damp qualities to this dark soil. 
+		    This soil heats up easily and can retain water.
+              </p>
+              <a href="peaty.html" class="carousel-item__btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item carousel-item--5">
+          <div class="carousel-item__image"></div>
+          <div class="carousel-item__info">
+            <div class="carousel-item__container">
+            <h2 class="carousel-item__subtitle">The white building</h2>
+              <h1 class="carousel-item__title">Silt Soil</h1>
+              <p class="carousel-item__description">
+                This offers great benefits to the plants if the drainage system is channelized properly,
+		    it tends to hold moisture and has a soapy and soft texture to it. 
+		    This soil is comparatively easier to cultivate.
+              </p>
+              <a href="silt.html" class="carousel-item__btn">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main"></div>
+    </div>
+
+    <footer class="footer">
+			<div class="cont">
+				<div class="row">
+					<div class="footer-col">
+						<h4>Further Info</h4>
+						<a href="About Us.html">About Us</a>
+						<br>
+						<a href="#">&#169 B.E.N.Z</a>
+					</div>
+					<div class="footer-col">
+						<h4>Contact Us</h4>
+						<a href="#">teambenz2022@gmail.com</a>
+						<br>
+						<a href="#">No.7871573188</a>
+					</div>
+					<div class="footer-col">
+						<h4>Support</h4>
+						<a href="#">Services and Support</a>
+						<br>
+						<a href="#">FAQ</a>
+					</div>
+					<div class="footer-col">
+						<h4>Follow Us</h4>
+						<div class="social-links">
+							<a href="#"><i class="fab fa-facebook-f"></i></a>
+							<a href="#"><i class="fab fa-twitter"></i></a>
+							<a href="#"><i class="fab fa-instagram"></i></a>
+							<a href="#"><i class="fab fa-linkedin-in"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+  </body>
+</html>
